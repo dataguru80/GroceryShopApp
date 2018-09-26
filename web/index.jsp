@@ -29,13 +29,11 @@
 
 
                 <ul class="navbar-nav ml-auto" style="font-size:18px;">
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-home"></i><strong> Home</strong></a></li>            
+                    <li class="nav-item"><a href="index.jsp" class="nav-link"><i class="fa fa-home"></i><strong> Home</strong></a></li>            
                     <li class="nav-item"><a href="#" class="nav-link"><strong>About</strong></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><strong>Contact</strong></a></li>
-                    <li><button  type="button" class="btn btn-danger">Login</button></li>&nbsp;
-                   
-                        <li><button type="button" class="btn btn-primary">Register</button></li>
-
+                    <li class="nav-item"><a href="registration.jsp" class="btn btn-primary">Login</a></li>&nbsp;
+                    <li class="nav-item"><a href="registration.jsp" class="btn btn-danger">Register</a></li>
                 </ul>
                 
         </nav> 
@@ -137,9 +135,16 @@
             </div>
         </div>
         <!---footer   -===========================================-->
-        
-        <footer class="jumbotron" style="margin-bottom: 0">
-  <p>Grocery Shop located at Delhi <a href="index.jsp"> Home</a></p> 
+        <div style="width: 120px; ;height:225px;" >
+        </div>
+        <footer class="jumbotron" style="margin-bottom: 0;padding: 10px; background-color: black;color: white">
+            <p>Grocery Shop located at Delhi <a href="index.jsp"> Home</a></p> <br>
+            <ul style="list-style-type: none;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
 </footer
     </body>
 </html>
