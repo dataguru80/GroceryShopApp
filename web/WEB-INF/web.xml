@@ -16,6 +16,10 @@
         <servlet-name>registration</servlet-name>
         <servlet-class>Controller.registration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginn</servlet-name>
+        <servlet-class>Controller.loginn</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>a</servlet-name>
         <url-pattern>/a</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>registration</servlet-name>
         <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginn</servlet-name>
+        <url-pattern>/loginn</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

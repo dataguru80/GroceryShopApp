@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author DEEPAK
  */
-public class login extends HttpServlet {
+public class loginn extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,17 +34,16 @@ public class login extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
              String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            
-            if(username.equals("deepak@gmail.com")&& password.equals("mittal")){
-                    
-                    HttpSession session = request.getSession();
-                    session.setAttribute("user", username);                    
-                    response.sendRedirect("productdisplay.jsp");
-            }
-            else{
-                response.sendRedirect("registration.jsp");
-            }
+        String password = request.getParameter("password");
+
+        if (username.equals("deepak@gmail.com") && password.equals("mittal")) {
+
+            HttpSession session = request.getSession();
+            session.setAttribute("user", username);
+            response.sendRedirect("productdisplay.jsp");
+        } else {
+            response.sendRedirect("registration.jsp");
+        }
         }
     }
 

@@ -4,6 +4,8 @@
     Author     : DEEPAK
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="Model.JDBC"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,9 +24,9 @@
     </head>
     <body>
         <%
-            if (session.getAttribute("user") == null) {
-                response.sendRedirect("registration.jsp");
-            }
+            //if (session.getAttribute("user") == null) {
+         //       response.sendRedirect("registration.jsp");
+         //   }
 
 
         %>
@@ -46,20 +48,76 @@
                     <form action="logout">
                         <li class="nav-item"><input type="submit"class="btn btn-danger" value="Logout"></li>
                     </form>    
-
-
                 </ul>
 
         </nav> 
 
         <div style="height:20px;" >
         </div>     
+<!--=============================================================== Search Bar ==============================================================-->                    
         <div class="container">
-
-            <form class="form-inline"  action="#">
+            <form class="form-inline ml-auto"  action="#">
                 <input type="text" class="form-control" placeholder="Search" width="100%" >
                 <button type="button" class="btn btn-success">Search</button>
             </form>
         </div>
+
+<!--=============================================================== List Section =============================================================-->
+
+ <div style="width: 100% ;height: 20px;" >
+        </div>
+        <!-- Slide Navigation -->
+        <%
+
+            ResultSet rs;
+            try {
+
+                JDBC obj = new JDBC();
+                rs = obj.connectDB("select * from CATEGORIES");
+
+        %>
+
+
+        <div class="container-fluid" style="display: flex;">
+            <div>  
+                <ul class="list-group" style="background-color: green;width: 19%;" >
+                    <li class="list-group-item active" style="width: 250px;border-color: white; background-color: steelblue;color:black;">Select Categories</li>
+                        <%          while (rs.next()) {%>
+                    <li class="list-group-item hover" style="width: 250px;border-color: white;background-color: lightsteelblue;color:black;"><%= rs.getString(2)%> </li>
+
+
+                    <%  } %>
+                </ul>
+            </div>
+            <% } catch (Exception e) {
+                    System.out.println("Exception " + e.getMessage());
+                }
+
+
+            %>
+            <div style="padding-left:20px;">    
+                <table>
+                    <tr>
+                    <div class="card" style="width:200px;">
+                        <img class="card-img-top" src="img/ricebag.jpg" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">10Kg</h4>
+                            <p class="card-text">India Gate Basmati Rice</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+
+                </table>
+            </div>
+        </div>
+             <!--=============================================================== Footer Section ==============================================================-->
+        <footer class="jumbotron" style="margin-bottom: 0;padding: 10px;   background-color: black;color: white">
+            <p>Grocery Shop located at Delhi <a href="index.jsp"> Home</a></p> <br>
+            <ul style="list-style-type: none;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </footer
     </body>
 </html>

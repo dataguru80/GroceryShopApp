@@ -1,9 +1,3 @@
-<%-- 
-    Document   : registration
-    Created on : Sep 25, 2018, 11:19:37 PM
-    Author     : DEEPAK
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,25 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script  src="js/bootstrap.js"></script>
         <script src="js/bootstrap.min.js"></script>
-<!--        <script type="text/javascript">
-            function login(){
-               
-                var a = document.getElementById("email").value;
-                var b = document.getElementById("pwd").value;
-               
-                if(a === "deepak@gmail.com"){
-                    document.getElementBydId("state").innerHTML= "Success" ;
-                
-                }
-                else{
-                    
-                   locate = "productdisplay.jsp";
-                }
-                
-            }
-        </script>-->
-
-
     </head>
     <body style="background-color: blueviolet">
 <!--=============================================================== Navigation Section ==============================================================-->
@@ -71,7 +46,7 @@
 
                     <center><h2><strong>REGISTRATION</strong></h2></center>
                     <br> 
-                    <form >
+                    <form action="logout">
                         <div class="form-group">
                             <label for="pwd">Name</label>
                             <input type="password" class="form-control" id="pwd" placeholder="Enter Full Name" >
@@ -108,14 +83,14 @@
 
                     <center><h2><strong>LOGIN</strong></h2></center>
 
-                    <form action="login">
+                    <form action="loginn">
                         <div class="form-group" >
                             <label for="email">Username</label>
                             <input type="email" class="form-control" id="email" name="username" placeholder="Enter Username">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password</label>
-                            <input type="password" name="password" name="password" class="form-control" id="pwd" placeholder="Enter password" >
+                            <input type="password" name="password" class="form-control" id="pwd" placeholder="Enter password" >
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox"> Remember me</label>
