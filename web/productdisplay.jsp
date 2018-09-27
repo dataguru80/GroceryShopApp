@@ -24,9 +24,12 @@
     </head>
     <body>
         <%
-            //if (session.getAttribute("user") == null) {
-         //       response.sendRedirect("registration.jsp");
-         //   }
+            response.setHeader("Cache-Control", "no-Cache, no-store,must-revalidate"); // Http 1.1
+            // response.setHeader("Pragma", "no-cache"); http 1.0
+            // response.setHeader("Expires", "0"); //Proxies
+            if (session.getAttribute("user") == null) {
+                response.sendRedirect("registration.jsp");
+            }
 
 
         %>
@@ -45,6 +48,7 @@
                     <li class="nav-item"><a href="#" class="nav-link"><strong>About</strong></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><strong>Contact</strong></a></li>
                     <li class="nav-item"><a href="#" class="nav-link" style="color:black;"><strong>Welcome ${user}</strong></a></li>    
+                    <li class="nav-item"><a href="#" class="nav-link">Cart</a></li>
                     <form action="logout">
                         <li class="nav-item"><input type="submit"class="btn btn-danger" value="Logout"></li>
                     </form>    
@@ -54,22 +58,21 @@
 
         <div style="height:20px;" >
         </div>     
-<!--=============================================================== Search Bar ==============================================================-->                    
+        <!--=============================================================== Search Bar ==============================================================-->                    
         <div class="container">
-            <form class="form-inline ml-auto"  action="#">
-                <input type="text" class="form-control" placeholder="Search" width="100%" >
+            <form class="form-inline" style="float: right;"  action="#">
+                <input type="text" class="form-control" placeholder="Search" style="width: 400px;" >
+                <div style="width: 5px;"></div>
                 <button type="button" class="btn btn-success">Search</button>
             </form>
         </div>
 
-<!--=============================================================== List Section =============================================================-->
+        <!--=============================================================== List Section =============================================================-->
 
- <div style="width: 100% ;height: 20px;" >
+        <div style="width: 100% ;height: 20px;" >
         </div>
         <!-- Slide Navigation -->
-        <%
-
-            ResultSet rs;
+        <%            ResultSet rs;
             try {
 
                 JDBC obj = new JDBC();
@@ -87,7 +90,11 @@
 
 
                     <%  } %>
+
+
                 </ul>
+                <div style="height: 20px;"></div>
+
             </div>
             <% } catch (Exception e) {
                     System.out.println("Exception " + e.getMessage());
@@ -95,7 +102,11 @@
 
 
             %>
-            <div style="padding-left:20px;">    
+
+
+            <!--=============================================================== Cart Section ==============================================================-->            
+            
+            <div style="padding-left:20px;padding-top: 43px;">    
                 <table>
                     <tr>
                     <div class="card" style="width:200px;">
@@ -109,7 +120,7 @@
                 </table>
             </div>
         </div>
-             <!--=============================================================== Footer Section ==============================================================-->
+        <!--=============================================================== Footer Section ==============================================================-->
         <footer class="jumbotron" style="margin-bottom: 0;padding: 10px;   background-color: black;color: white">
             <p>Grocery Shop located at Delhi <a href="index.jsp"> Home</a></p> <br>
             <ul style="list-style-type: none;">

@@ -13,7 +13,15 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script  src="js/bootstrap.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            function status(){
+                    
+                document.getElementById("status").innerHTML = "Registered Successfully";
+                alert("Registration Successfull");
+            }
+        </script>    
     </head>
+    
     <body style="background-color: blueviolet">
 <!--=============================================================== Navigation Section ==============================================================-->
         <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" style="height:80px;">
@@ -46,31 +54,32 @@
 
                     <center><h2><strong>REGISTRATION</strong></h2></center>
                     <br> 
-                    <form action="logout">
+                    <form action="registration">
                         <div class="form-group">
                             <label for="pwd">Name</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter Full Name" >
+                            <input type="text" class="form-control" name="name" placeholder="Enter Full Name" >
                         </div>
                         <div class="form-group">
                             <label for="pwd">Username</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter Username" >
+                            <input type="text" class="form-control" name="username" placeholder="Enter Username" >
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" >
+                            <input type="password" class="form-control" name="password" placeholder="Enter password" >
                         </div>
                         <div class="form-group" >
                             <label for="email">Email Id</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email Id">
+                            <input type="text" class="form-control" name="email" placeholder="Enter email Id">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Contact No</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="contact No" >
+                            <input type="text" class="form-control" name="contact" placeholder="contact No" >
                         </div>
-
+                        
+                        <h5 id="status"></h5>
                         <label>By creating an account you agree to our <a href="#">Terms & Privacy</a></label>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%;height: 50px; ">Register</button>
+                        <button type="submit" class="btn btn-primary" onclick="status()"style="width: 100%;height: 50px; ">Register</button>
                     </form>
                 </div>
             </div>
@@ -86,7 +95,7 @@
                     <form action="loginn">
                         <div class="form-group" >
                             <label for="email">Username</label>
-                            <input type="email" class="form-control" id="email" name="username" placeholder="Enter Username">
+                            <input type="text" class="form-control" id="email" name="username" placeholder="Enter Username">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password</label>
