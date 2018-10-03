@@ -86,7 +86,7 @@
                 <ul class="list-group" style="background-color: green;width: 19%;" >
                     <li class="list-group-item active" style="width: 250px;border-color: white; background-color: steelblue;color:black;">Select Categories</li>
                         <%          while (rs.next()) {%>
-                    <li class="list-group-item hover" style="width: 250px;border-color: white;background-color: lightsteelblue;color:black;"><%= rs.getString(2)%> </li>
+                    <li class="list-group-item hover" style="width: 250px;border-color: white;background-color: lightsteelblue;color:black;"><a href="#"><%= rs.getString(2)%></a></li>
 
 
                     <%  } %>

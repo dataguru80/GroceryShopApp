@@ -20,6 +20,10 @@
         <servlet-name>loginn</servlet-name>
         <servlet-class>Controller.loginn</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>alogin</servlet-name>
+        <servlet-class>Controller.alogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>a</servlet-name>
         <url-pattern>/a</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>loginn</servlet-name>
         <url-pattern>/loginn</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>alogin</servlet-name>
+        <url-pattern>/alogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
